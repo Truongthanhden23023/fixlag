@@ -1,0 +1,11 @@
+local settings = settings()
+settings.Rendering.QualityLevel = Enum.QualityLevel.Level1 -- Giảm chất lượng đồ họa
+
+for _, v in pairs(game:GetDescendants()) do
+    if v:IsA("BasePart") or v:IsA("Decal") or v:IsA("Texture") then
+        v.Transparency = 1 -- Ẩn các vật thể để giảm lag
+    end
+end
+
+game:GetService("RunService"):Set3dRenderingEnabled(false) -- Tắt rendering 3D
+game:GetService("Lighting").GlobalShadows = false -- Tắt đổ bóng
